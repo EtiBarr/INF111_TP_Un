@@ -41,8 +41,8 @@ public abstract class Message {
 
 	/**
 	 * Accesseur mutateur, pour mettre à jours le temps de l'envoi
-	 * @param tempsEnvoi, temps de la répétition de l'envoi **************** changed this from "long" because of an error when initializing, this file and code is from the prof, so i don't know if he had made an error or i just goofed
-	 */
+	 * @param lonng, temps de la répétition de l'envoi
+
 	public void setTempsEnvoi(long tempsEnvoi) {
 		this.tempsEnvoi = tempsEnvoi;
 	}
