@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2f504d9-0829-45ad-8c79-1ba05e9d3027" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INF111_TP_Un/src/utilitaires/FileChainee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/ProgrammePrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/ProgrammePrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/modele/communication/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/modele/communication/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/modele/satelliteRelai/SatelliteRelai.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/modele/satelliteRelai/SatelliteRelai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/utilitaires/FileSimplementChainee.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/INF111_TP_Un/ProgrammePrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/INF111_TP_Un/ProgrammePrincipal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/INF111_TP_Un/modele/satelliteRelai/SatelliteRelai.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/INF111_TP_Un/modele/satelliteRelai/SatelliteRelai.class" afterDir="false" />
-    </list>
+    <list default="true" id="a2f504d9-0829-45ad-8c79-1ba05e9d3027" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -75,7 +65,7 @@
       <workItem from="1707255497828" duration="203000" />
       <workItem from="1707256176108" duration="8075000" />
       <workItem from="1707310816785" duration="1105000" />
-      <workItem from="1707348441287" duration="9956000" />
+      <workItem from="1707348441287" duration="10620000" />
     </task>
     <servers />
   </component>
