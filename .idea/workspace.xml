@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2f504d9-0829-45ad-8c79-1ba05e9d3027" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/INF111_TP_Un/src/modele/centreControle/CentreControle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INF111_TP_Un/src/modele/communication/Nack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INF111_TP_Un/src/modele/communication/NoOp.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/INF111_TP_Un/src/modele/rover/Rover.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/modele/communication/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/modele/communication/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/modele/communication/TransporteurMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/modele/communication/TransporteurMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/INF111_TP_Un/ProgrammePrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/INF111_TP_Un/ProgrammePrincipal.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +75,7 @@
       <workItem from="1707348441287" duration="10620000" />
       <workItem from="1707359140976" duration="7000" />
       <workItem from="1707359426362" duration="6000" />
-      <workItem from="1707656648545" duration="10444000" />
+      <workItem from="1707656648545" duration="16256000" />
     </task>
     <servers />
   </component>

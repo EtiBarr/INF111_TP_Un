@@ -38,7 +38,6 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import java.util.LinkedList;
 import java.util.List;
-import java.util.HashMap;
 
 
 
@@ -117,10 +116,7 @@ public abstract class TransporteurMessage extends Thread {
 					//add the new message at the desired position
 					arrayMessage.add(position, msg);
 
-
 				}
-
-
 
 			
 		}finally {
@@ -145,8 +141,76 @@ public abstract class TransporteurMessage extends Thread {
 			try {
 
 				/*
-				 * (6.3.4) Insérer votre code ici 
+				 * (6.3.4) Insérer votre code ici
+				 *
+				 * Tant qu’il y a des messages et qu’aucun Nack n’a été envoyé
+					 Obtient le prochain message à gérer (début de la liste)
+					 *
+					 S’il s’agit d’un Nack
+					 obtient le compte du message manquant
+					 cherche ce message dans la file des messages envoyés en
+					 enlevant tous les messages au compte inférieur au passage
+					 ou estInstance de Nack.
+					 peek le message à envoyer (obtient sans enlever)
+					 envoi le message à répéter
+					 Enlever le message Nack de la liste des reçus.
+					 Sinon s’il y a un message manquant (comparer le compteCourant)
+					 envoi un Nack avec la valeur du message manquant
+					 (compteCourant)
+					 marque qu’un Nack a été envoyé (pour quitter la boucle)
+					 Sinon, si le compte du message est inférieur à compteCourant
+					 rejete le message, car il s’agit d’un duplicat
+					 *
+					 * Sinon,
+					 fait suivre le message au gestionnaireMessage
+					 défile le message
+					 incrémente le compteCourant
+					Obtient un nouveau compte unique (CompteurMsg)
+					Envoi un message NoOp
 				 */
+
+				LinkedList<Message> listMessage = new LinkedList<Message>();
+				LinkedList<Message> listMessageEnvoyer = new LinkedList<Message>();
+
+				boolean nackSent = false;
+
+				while(!listMessage.isEmpty() && !nackSent){
+
+						Message nextMessage = listMessage.getFirst();
+
+						if(nextMessage instanceof Nack){
+
+							int nextMessageCompte = nextMessage.getCompte();
+
+							Message messageAEnvoyer = listMessageEnvoyer.peek();
+
+							//send that message
+
+							//remove the first element, which should be the nack that we just did
+							listMessage.remove(nextMessage);
+
+						}else if(nextMessage.getCompte() != compteCourant){
+
+							//need to create nack here with the missing message
+
+							nackSent = true; //set nackSent to true to leave the while loop
+						}else if(nextMessage.getCompte() < compteCourant){
+
+							listMessageEnvoyer.removeFirst(); //remove this message since it's a double
+						}else{
+							gestionnaireMessage(nextMessage);
+							listMessage.remove(nextMessage);
+							compteCourant++;
+						}
+					}
+
+				int compteUnique = compteurMsg.getCompteActuel();
+				Message noOpMessage = new NoOp(compteUnique);
+
+
+				//missing the send a NoOp message part
+
+
 			
 			}finally{
 				lock.unlock();
