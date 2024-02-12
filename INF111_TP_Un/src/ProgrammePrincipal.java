@@ -1,9 +1,7 @@
 import modele.centreControle.CentreControle;
-import modele.communication.Message;
 import modele.rover.Rover;
 import modele.satelliteRelai.SatelliteRelai;
-import utilitaires.FileChainee;
-import utilitaires.Vect2D;
+
 
 public class ProgrammePrincipal {
 
@@ -11,8 +9,7 @@ public class ProgrammePrincipal {
 	/**
 	 * Programme principale, instancie les éléments de la simulation,
 	 * les lie entre eux, puis lance la séquence de test.
-	 * @param args, pas utilisé
-	 */
+     */
 
 
 	public CentreControle centreControle;

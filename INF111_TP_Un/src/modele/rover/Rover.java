@@ -21,7 +21,6 @@ public class Rover extends TransporteurMessage {
 
      }
 
-
      protected void gestionnaireMessage(Message msg){
 
          System.out.println("Nom de la classe" + msg.getClass() + "Le numero du message recu:" + msg.getCompte());

@@ -1,10 +1,10 @@
 package modele.communication;
 /**
  * Classe de base qui définit un message.
- * 
+
  * Elle contient les informations permettant d'identifier la position 
  * du message dans la séquence et le temps de son envoi
- * 
+
  * Services offerts:
  *  - Message
  *  - getTempsEnvoi
@@ -37,6 +37,7 @@ public abstract class Message {
 		return "This message sucks: " + compte + "and the other one is: " + tempsEnvoi;
 	}
 	//*******************************************************************************************************************must delete
+
 	/**
 	 * Accesseur informateur, pour obtenir le temps de l'envoi
 	 * @return long, temps de l'envoi
@@ -45,19 +46,26 @@ public abstract class Message {
 		return tempsEnvoi;
 	}
 
+
+
+
 	/**
 	 * Accesseur mutateur, pour mettre à jours le temps de l'envoi
-	 * @param long, temps de la répétition de l'envoi
+	 * @param tempsEnvoi , temps de la répétition de l'envoi
+	*/
 
 	public void setTempsEnvoi(long tempsEnvoi) {
 		this.tempsEnvoi = tempsEnvoi;
 	}
+
+
 
 	/**
 	 * Accesseur informateur, pour obtenir le compte unique
 	 * @return int, compte unique
 	 */
 	public int getCompte() {
+
 		return compte;
 	}
 
