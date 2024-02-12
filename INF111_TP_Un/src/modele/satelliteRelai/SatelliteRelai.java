@@ -25,7 +25,9 @@ package modele.satelliteRelai;
 import java.util.Random;
 import java.util.concurrent.locks.ReentrantLock;
 
+import modele.centreControle.CentreControle;
 import modele.communication.Message;
+import modele.rover.Rover;
 import utilitaires.FileChainee;
 
 public class SatelliteRelai extends Thread{
@@ -107,7 +109,21 @@ public class SatelliteRelai extends Thread{
 			}
 		}
 	}
-	
+
+	public CentreControle centreControle;
+	public static void lierCentreOp(CentreControle centreControle){
+
+			//must register in the appropriate variable
+
+	}
+
+	public Rover rover;
+
+	public static void lierRover(Rover rover){
+
+		//must register in the appropriate variable
+
+	}
 	
 
 }

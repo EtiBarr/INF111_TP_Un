@@ -129,7 +129,6 @@ public abstract class TransporteurMessage extends Thread {
 	 * Tâche effectuant la gestion des messages reçu
 	 */
 
-	//could use a HashMap here
 	public void run() {
 		
 		int compteCourant = 0;
