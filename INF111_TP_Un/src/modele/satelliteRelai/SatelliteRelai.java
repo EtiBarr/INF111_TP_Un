@@ -59,8 +59,6 @@ public class SatelliteRelai extends Thread{
 
 				messageCentreOp.ajouterElement(msg);
 
-				System.out.println(messageCentreOp);
-
 			}
 			
 		}finally {
@@ -82,8 +80,6 @@ public class SatelliteRelai extends Thread{
 			if(rand.nextDouble() > PROBABILITE_PERTE_MESSAGE){
 
 				messageRover.ajouterElement(msg);
-
-				System.out.println(messageRover);
 
 			}
 			
