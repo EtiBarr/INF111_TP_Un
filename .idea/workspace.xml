@@ -128,6 +128,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="FileChaineeTest.testAjouterEtEnleverElement" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="INF111_TP_Un" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="testSuite.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="testSuite" />
+      <option name="MAIN_CLASS_NAME" value="testSuite.FileChaineeTest" />
+      <option name="METHOD_NAME" value="testAjouterEtEnleverElement" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FileChaineeTest.testToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="INF111_TP_Un" />
       <extension name="coverage">
@@ -159,22 +175,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Vect2DTest.ajouterShouldAddPositiveValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="INF111_TP_Un" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="testSuite.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="testSuite" />
-      <option name="MAIN_CLASS_NAME" value="testSuite.Vect2DTest" />
-      <option name="METHOD_NAME" value="ajouterShouldAddPositiveValues" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Vect2DTest.testEquals_NullVector_ReturnsFalse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="INF111_TP_Un" />
       <extension name="coverage">
@@ -194,10 +194,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.FileChaineeTest" />
+        <item itemvalue="JUnit.FileChaineeTest.testAjouterEtEnleverElement" />
         <item itemvalue="JUnit.FileChaineeTest.testToString" />
         <item itemvalue="JUnit.Vect2DTest" />
         <item itemvalue="JUnit.Vect2DTest.testEquals_NullVector_ReturnsFalse" />
-        <item itemvalue="JUnit.Vect2DTest.ajouterShouldAddPositiveValues" />
       </list>
     </recent_temporary>
   </component>

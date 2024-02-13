@@ -74,7 +74,7 @@ class FileChaineeTest {
         assertFalse(file.estVide());
 
         file.enleverElement();
-        assertEquals(msg2, file.pop());
+        assertNull(file.pop());
         assertTrue(file.estVide());
     }
 
@@ -103,6 +103,72 @@ class FileChaineeTest {
     }
 
 
+    @Test
+    void testAjouterElementWithDifferentValues() {
+        FileChainee file = new FileChainee();
+        Message msg = new MockMessage(5);
+        file.ajouterElement(msg);
+        assertFalse(file.estVide());
+    }
+
+    @Test
+    void testEnleverElementWithDifferentValues() {
+        FileChainee file = new FileChainee();
+        Message msg = new MockMessage(3);
+        file.ajouterElement(msg);
+        file.enleverElement();
+        assertTrue(file.estVide());
+    }
+
+    @Test
+    void testPopWithDifferentValues() {
+        FileChainee file = new FileChainee();
+        Message msg = new MockMessage(7);
+        file.ajouterElement(msg);
+        Message poppedMsg = file.pop();
+        assertEquals(msg, poppedMsg);
+        assertTrue(file.estVide());
+    }
+
+    @Test
+    void testToStringWithDifferentValues() {
+        FileChainee file = new FileChainee();
+        Message msg1 = new MockMessage(4);
+        Message msg2 = new MockMessage(9);
+        file.ajouterElement(msg1);
+        file.ajouterElement(msg2);
+
+        String expected = "The object holds: [" + msg1 + ", " + msg2 + "]";
+        assertEquals(expected, file.toString());
+    }
+
+    @Test
+    void testAjouterEtEnleverElementWithDifferentValues() {
+        FileChainee file = new FileChainee();
+        Message msg1 = new MockMessage(2);
+        Message msg2 = new MockMessage(6);
+
+        file.ajouterElement(msg1);
+        file.ajouterElement(msg2);
+        assertEquals(msg1, file.pop());
+        assertFalse(file.estVide());
+
+        file.enleverElement();
+        assertNull(file.pop());
+        assertTrue(file.estVide());
+    }
+
+    @Test
+    void testToStringNonEmptyQueueWithDifferentValues() {
+        FileChainee file = new FileChainee();
+        Message msg1 = new MockMessage(8);
+        Message msg2 = new MockMessage(11);
+        file.ajouterElement(msg1);
+        file.ajouterElement(msg2);
+
+        String expected = "The object holds: [" + msg1.toString() + ", " + msg2.toString() + "]";
+        assertEquals(expected, file.toString());
+    }
 
 
 }
