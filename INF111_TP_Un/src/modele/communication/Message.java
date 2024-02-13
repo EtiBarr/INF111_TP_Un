@@ -34,7 +34,7 @@ public abstract class Message {
 
 	//******************** Not Asked, just for testing ************************
 	public String toString(){
-		return "This message sucks: " + compte + "and the other one is: " + tempsEnvoi;
+		return "The compte is at: " + compte + " and the tempsEvoi is: " + tempsEnvoi;
 	}
 	//*******************************************************************************************************************must delete
 

@@ -100,9 +100,16 @@ public class mainTest {
 	 */
 
     public static void main(String[] args) {
-        testVect2d();
-        //testFileChaine();
+
+        SatelliteRelai satellite = new SatelliteRelai();
+        satellite.start();
         testEnvoyerMessage();
+
+
+
+        //testVect2d();
+        //testFileChaine();
+
 
     }
 }

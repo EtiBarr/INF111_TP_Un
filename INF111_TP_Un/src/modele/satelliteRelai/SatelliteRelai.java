@@ -59,6 +59,10 @@ public class SatelliteRelai extends Thread{
 
 				messageCentreOp.ajouterElement(msg);
 
+				//for testing of methode. this makes it so that it prints the messages right away
+				// and then i can see what is being done
+				System.out.println(messageCentreOp);
+
 			}
 			
 		}finally {
@@ -81,6 +85,9 @@ public class SatelliteRelai extends Thread{
 
 				messageRover.ajouterElement(msg);
 
+				//for testing of methode. this makes it so that it prints the messages right away
+				// and then i can see what is being done
+				System.out.println(messageRover);
 			}
 			
 		}finally {

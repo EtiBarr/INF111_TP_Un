@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2f504d9-0829-45ad-8c79-1ba05e9d3027" name="Changes" comment="" />
+    <list default="true" id="a2f504d9-0829-45ad-8c79-1ba05e9d3027" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/modele/communication/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/modele/communication/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/modele/communication/TransporteurMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/modele/communication/TransporteurMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/modele/satelliteRelai/SatelliteRelai.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/modele/satelliteRelai/SatelliteRelai.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/testSuite/mainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/testSuite/mainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/utilitaires/FileChainee.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/utilitaires/FileChainee.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -74,7 +81,7 @@
       <workItem from="1707359140976" duration="7000" />
       <workItem from="1707359426362" duration="6000" />
       <workItem from="1707656648545" duration="28799000" />
-      <workItem from="1707831222124" duration="197000" />
+      <workItem from="1707831222124" duration="5552000" />
     </task>
     <servers />
   </component>

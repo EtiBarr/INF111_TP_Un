@@ -2,6 +2,8 @@ package utilitaires;
 
 
 import modele.communication.Message;
+import modele.communication.NoOp;
+
 import java.util.Arrays;
 
 /**
@@ -24,7 +26,6 @@ public class FileChainee {
                 this.suivant = null;
             }
     }
-
 
     private Node tete;
     private Node fin;
@@ -123,9 +124,9 @@ public class FileChainee {
         if(!estVide()) {
 
             //taking the elements out of the que to print them all
-            Message[] array = new Message[100]; //if more then 100 in the queue, the test will break
+            Message[] array = new Message[15]; //if more then 100 in the queue, the test will break
             int i = 0;
-            while(tete != null){
+            while(i < array.length){
                 array[i] = this.pop();
                 i++;
             }
@@ -136,7 +137,7 @@ public class FileChainee {
                 this.ajouterElement(k);
             }
         } else {
-            output = "La pile est vide";
+            output = "La file est vide";
         }
         return output;
     }

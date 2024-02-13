@@ -35,10 +35,13 @@ package modele.communication;
 
 import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
-
 import java.util.LinkedList;
 
 
+//questions to ask the prof
+//do we need to use out own linked queue or do we need to implement a ready made list (the guide says that we have to implement two)
+//where do we actually make the list of messages, sent and tosend
+//is it an issue if i name a little bit in english
 public abstract class TransporteurMessage extends Thread {
 	
 	// compteur de message
@@ -100,6 +103,7 @@ public abstract class TransporteurMessage extends Thread {
 			
 			try {
 
+				//would i not have to use the linked list tha i made?
 				LinkedList<Message> listMessage = new LinkedList<Message>();
 				LinkedList<Message> listMessageEnvoyer = new LinkedList<Message>();
 
