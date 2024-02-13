@@ -1,9 +1,9 @@
 package testSuite;
 
-import modele.communication.Message;
-import modele.satelliteRelai.SatelliteRelai;
-import utilitaires.FileChainee;
-import utilitaires.Vect2D;
+import main.modele.communication.Message;
+import main.modele.satelliteRelai.SatelliteRelai;
+import main.utilitaires.FileChainee;
+import main.utilitaires.Vect2D;
 
 public class mainTest {
 
