@@ -13,7 +13,7 @@ public class Vect2D {
 
 
     /**
-     * constructeur par defaut
+     * constructeur par default
      */
     public Vect2D(){
 

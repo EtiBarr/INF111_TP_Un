@@ -42,7 +42,13 @@ public class mainTest {
 
         FileChainee file = new FileChainee();
 
-        Message test = new Message(3) {
+        Message test = new Message(1) {
+            @Override
+            public long getTempsEnvoi() {
+                return super.getTempsEnvoi();
+            }
+        };
+        Message test2 = new Message(2) {
             @Override
             public long getTempsEnvoi() {
                 return super.getTempsEnvoi();
@@ -50,10 +56,10 @@ public class mainTest {
         };
 
         file.ajouterElement(test);
-        file.ajouterElement(test);
-        file.ajouterElement(test);
-        file.ajouterElement(test);
-        file.ajouterElement(test);
+        file.ajouterElement(test2);
+        file.ajouterElement(test2);
+        file.ajouterElement(test2);
+        file.ajouterElement(test2);
         file.ajouterElement(test);
         file.ajouterElement(test);
 
@@ -101,14 +107,14 @@ public class mainTest {
 
     public static void main(String[] args) {
 
-        SatelliteRelai satellite = new SatelliteRelai();
-        satellite.start();
-        testEnvoyerMessage();
+        //SatelliteRelai satellite = new SatelliteRelai();
+        //satellite.start();
+        //testEnvoyerMessage();
 
 
 
         //testVect2d();
-        //testFileChaine();
+        testFileChaine();
 
 
     }

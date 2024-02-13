@@ -104,6 +104,8 @@ public abstract class TransporteurMessage extends Thread {
 			try {
 
 				//would i not have to use the linked list tha i made?
+				//i could maybe use the queue that i made myself and then make a copy of the first one and use the copy
+				//instead of having to unstack and restack
 				LinkedList<Message> listMessage = new LinkedList<Message>();
 				LinkedList<Message> listMessageEnvoyer = new LinkedList<Message>();
 
