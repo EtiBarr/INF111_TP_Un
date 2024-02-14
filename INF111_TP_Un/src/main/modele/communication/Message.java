@@ -10,7 +10,7 @@ package main.modele.communication;
  *  - getTempsEnvoi
  *  - setTempsEnvoi
  *  - getCompte
- * 
+ *
  * @author Frederic Simard, ETS
  * @version Ete, 2021
  */
@@ -27,15 +27,18 @@ public abstract class Message {
      * @param compte, identifiant unique et incrémental
      */
 	public Message(int compte) {
-		this.compte = compte; 
+		this.compte = compte;
 		tempsEnvoi = System.currentTimeMillis(); // prend en note le temps de l'envoi
 	}
 
 
 	//******************** Not Asked, just for testing ************************
+	/*
 	public String toString(){
 		return "The compte is at: " + compte + " and the tempsEvoi is: " + tempsEnvoi;
 	}
+	*/
+
 	//*******************************************************************************************************************must delete
 
 	/**
@@ -69,5 +72,5 @@ public abstract class Message {
 		return compte;
 	}
 
-	
+
 }

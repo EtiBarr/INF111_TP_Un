@@ -33,7 +33,6 @@ package main.modele.communication;
  * @version Hiver, 2024
  */
 
-import java.util.ArrayList;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.LinkedList;
 
@@ -43,7 +42,10 @@ import java.util.LinkedList;
 //where do we actually make the list of messages, sent and tosend
 //is it an issue if i name a little bit in english
 public abstract class TransporteurMessage extends Thread {
-	
+
+	LinkedList<Message> listMessageRecu = new LinkedList<>();
+	LinkedList<Message> listMessageEnvoyer = new LinkedList<>();
+
 	// compteur de message
 	protected CompteurMessage compteurMsg;
 	// lock qui protège la liste de messages reçu
@@ -65,24 +67,23 @@ public abstract class TransporteurMessage extends Thread {
 
 	public void receptionMessageDeSatellite(Message msg) {
 		lock.lock();
-		
+
 		try {
 
 			//i'm not sure if the way i am checking the position is the best ****************might have to change the way the position is allocated
 			//maybe i am dropping the value one instance too far in the array
-			ArrayList<Message> arrayMessage = new ArrayList<Message>();
 
 			int nbNack = 0;
 				if(msg instanceof Nack){
 					//addFirst will add the message at the start of the list, ass desired
-					arrayMessage.addFirst(msg);
+					listMessageRecu.addFirst(msg);
 					nbNack++;
 				}else{
 
 					// this is to account for the position of the message according to the amount of nacks that were placed in the array
 					int position = nbNack + msg.getCompte();
 					//add the new message at the desired position
-					arrayMessage.add(position, msg);
+					listMessageRecu.add(position, msg);
 				}
 		}finally {
 			lock.unlock();
@@ -91,25 +92,24 @@ public abstract class TransporteurMessage extends Thread {
 
 
 	@Override
-	/**
+	/*
 	 * Tâche effectuant la gestion des messages reçu
 	 */
 
 	public void run() {
-		
+
+		System.out.println("Transporteur works great");
+
 		int compteCourant = 0;
 		
 		while(true) {
-			
+			System.out.println("Transporteur works great");
+
 			lock.lock();
 			
 			try {
 
-				//would i not have to use the linked list tha i made?
-				//i could maybe use the queue that i made myself and then make a copy of the first one and use the copy
-				//instead of having to unstack and restack
-				LinkedList<Message> listMessageRecu = new LinkedList<>();
-				LinkedList<Message> listMessageEnvoyer = new LinkedList<>();
+				System.out.println("Transporteur works great");
 
 				boolean nackSent = false;
 

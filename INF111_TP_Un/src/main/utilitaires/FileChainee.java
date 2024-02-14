@@ -15,7 +15,7 @@ public class FileChainee {
      * des Node, c'est les block qui contienent l'information dans ma file
      * implemented pour faciliter l'implementation de ma file
      */
-    private class Node{
+    private static class Node{
         Message message;
         Node suivant;
 
