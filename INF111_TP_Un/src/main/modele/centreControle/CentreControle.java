@@ -10,11 +10,14 @@ public  class CentreControle extends TransporteurMessage {
 
     public CentreControle(SatelliteRelai satelliteRelai){
         super();
-        this.satelliteRelai = satelliteRelai;
+        this.satelliteRelai = satelliteRelai; //link to satelliteRelai
     }
      protected void envoyerMessage(Message msg){
 
-        satelliteRelai.envoyerMessageVersRover(msg);
+         if (satelliteRelai != null) {
+             satelliteRelai.envoyerMessageVersRover(msg);
+             satelliteRelai.messageRover.ajouterElement(msg); // Add the message to the sent messages queue in SatelliteRelai
+         }
 
          receptionMessageDeSatellite(msg); // not sure that this is the right method to call
 

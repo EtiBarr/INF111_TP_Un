@@ -68,6 +68,8 @@ public abstract class TransporteurMessage extends Thread {
 		
 		try {
 
+			//i'm not sure if the way i am checking the position is the best ****************might have to change the way the position is allocated
+			//maybe i am dropping the value one instance too far in the array
 			ArrayList<Message> arrayMessage = new ArrayList<Message>();
 
 			int nbNack = 0;
@@ -106,49 +108,55 @@ public abstract class TransporteurMessage extends Thread {
 				//would i not have to use the linked list tha i made?
 				//i could maybe use the queue that i made myself and then make a copy of the first one and use the copy
 				//instead of having to unstack and restack
-				LinkedList<Message> listMessage = new LinkedList<Message>();
-				LinkedList<Message> listMessageEnvoyer = new LinkedList<Message>();
+				LinkedList<Message> listMessageRecu = new LinkedList<>();
+				LinkedList<Message> listMessageEnvoyer = new LinkedList<>();
 
 				boolean nackSent = false;
 
-				while(!listMessage.isEmpty() && !nackSent){
+				while(!listMessageRecu.isEmpty() && !nackSent){ //Tant qu’il y a des messages et qu’aucun Nack n’a été envoyé
 
-						Message nextMessage = listMessage.getFirst();
+						Message nextMessage = listMessageRecu.getFirst(); //Obtient le prochain message à gérer (début de la liste)
 
-						if(nextMessage instanceof Nack){
+						if(nextMessage instanceof Nack){ //S’il s’agit d’un Nack
 
-							int nextMessageCompte = nextMessage.getCompte();
+							int nextMessageCompte = nextMessage.getCompte(); //obtient le compte du message manquant
 
-							Message messageAEnvoyer = listMessageEnvoyer.peek();
+							while(!listMessageEnvoyer.isEmpty() //cherche ce message dans la file des messages envoyés en enlevant tous les messages
+									&& listMessageEnvoyer.getFirst().getCompte() < nextMessageCompte //au compte inférieur au passage
+									|| listMessageEnvoyer.getFirst() instanceof Nack){ //ou estInstance de Nack.
 
-							envoyerMessage(messageAEnvoyer);
+								listMessageEnvoyer.poll(); //not sure if i should use removeFirst instead *****
+							}
 
-							//remove the first element, which should be the nack that we just did
-							listMessage.remove(nextMessage);
+							Message messageAEnvoyer = listMessageEnvoyer.peek(); //peek le message à envoyer (obtient sans enlever)
 
-						}else if(nextMessage.getCompte() != compteCourant){
+							envoyerMessage(messageAEnvoyer); //envoi le message à répéter
 
-							//need to create nack here with the missing message
+							//nextMessage est le message Nack dans cetter instance
+							listMessageRecu.remove(nextMessage); //Enlever le message Nack de la liste des reçus.
+
+						}else if(nextMessage.getCompte() != compteCourant){ //Sinon s’il y a un message manquant  (comparer le compteCourant)
+
 							Message messageNack = new Nack(compteCourant);
-							envoyerMessage(messageNack);
+							envoyerMessage(messageNack); // envoi un Nack avec la valeur du message manquant (compteCourant)
 
-							nackSent = true; //set nackSent to true to leave the while loop
-						}else if(nextMessage.getCompte() < compteCourant){
+							nackSent = true; //marque qu’un Nack a été envoyé (pour quitter la boucle)
 
-							listMessageEnvoyer.removeFirst(); //remove this message since it's a double
-						}else{
-							gestionnaireMessage(nextMessage);
-							listMessage.remove(nextMessage);
-							compteCourant++;
+						}else if(nextMessage.getCompte() < compteCourant){ //Sinon, si le compte du message est inférieur à compteCourant
+
+							listMessageRecu.poll(); //rejete le message, car il s’agit d’un duplicat
+						}else{ // Sinon,
+							gestionnaireMessage(nextMessage); //fait suivre le message au gestionnaireMessage
+							listMessageRecu.remove(nextMessage); //défile le message
+							compteCourant++; //incrémente le compteCourant
 						}
 					}
 
-				int compteUnique = compteurMsg.getCompteActuel();
+				int compteUnique = compteurMsg.getCompteActuel(); //Obtient un nouveau compte unique (CompteurMsg)
+
 				Message noOpMessage = new NoOp(compteUnique);
+				envoyerMessage(noOpMessage); //Envoi un message NoOp
 
-				envoyerMessage(noOpMessage);
-
-			
 			}finally{
 				lock.unlock();
 			}

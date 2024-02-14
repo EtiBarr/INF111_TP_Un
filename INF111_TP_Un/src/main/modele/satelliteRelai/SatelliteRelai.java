@@ -24,7 +24,6 @@ package main.modele.satelliteRelai;
 
 import java.util.Random;
 import java.util.concurrent.locks.ReentrantLock;
-
 import main.modele.centreControle.CentreControle;
 import main.modele.communication.Message;
 import main.modele.rover.Rover;
@@ -32,8 +31,8 @@ import main.utilitaires.FileChainee;
 
 public class SatelliteRelai extends Thread{
 
-	FileChainee messageCentreOp = new FileChainee();
-	FileChainee messageRover = new FileChainee();
+	public FileChainee messageCentreOp = new FileChainee();
+	public FileChainee messageRover = new FileChainee();
 
 
 	static final int TEMPS_CYCLE_MS = 500;
@@ -42,6 +41,24 @@ public class SatelliteRelai extends Thread{
 	ReentrantLock lock = new ReentrantLock();
 	
 	private Random rand = new Random();
+
+
+	public CentreControle centreControle;
+	public Rover rover;
+
+	public  void lierCentreOp(CentreControle centreControle){ //not sure if it should be the Message object or not
+
+		this.centreControle = centreControle; //link to centreControle
+
+		//must register in the appropriate variable
+	}
+
+	public void lierRover(Rover rover){
+
+		this.rover = rover; //link to rover
+
+		//must register in the appropriate variable
+	}
 
 
 	/**
@@ -58,10 +75,6 @@ public class SatelliteRelai extends Thread{
 			if(rand.nextDouble() > PROBABILITE_PERTE_MESSAGE){
 
 				messageCentreOp.ajouterElement(msg);
-
-				//for testing of methode. this makes it so that it prints the messages right away
-				// and then i can see what is being done
-				System.out.println(messageCentreOp);
 
 			}
 			
@@ -85,9 +98,6 @@ public class SatelliteRelai extends Thread{
 
 				messageRover.ajouterElement(msg);
 
-				//for testing of methode. this makes it so that it prints the messages right away
-				// and then i can see what is being done
-				System.out.println(messageRover);
 			}
 			
 		}finally {
@@ -100,8 +110,16 @@ public class SatelliteRelai extends Thread{
 		
 		while(true) {
 
-			messageCentreOp.enleverElement();
-			messageRover.enleverElement();
+			while (!messageCentreOp.estVide()) {
+				if (centreControle != null) {
+					centreControle.receptionMessageDeSatellite(messageCentreOp.pop());
+				}
+			}
+				while (!messageRover.estVide()) {
+					if (rover != null) {
+						rover.receptionMessageDeSatellite(messageRover.pop());
+					}
+				}
 
 
 			// attend le prochain cycle
@@ -113,20 +131,7 @@ public class SatelliteRelai extends Thread{
 		}
 	}
 
-	public CentreControle centreControle;
-	public static void lierCentreOp(CentreControle centreControle){
 
-			//must register in the appropriate variable
-
-	}
-
-	public Rover rover;
-
-	public static void lierRover(Rover rover){
-
-		//must register in the appropriate variable
-
-	}
 	
 
 }

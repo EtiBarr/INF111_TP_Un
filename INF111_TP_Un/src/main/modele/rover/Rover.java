@@ -15,7 +15,10 @@ public class Rover extends TransporteurMessage {
      }
      protected void envoyerMessage(Message msg){
 
-         satelliteRelai.envoyerMessageVersCentrOp(msg);
+         if (satelliteRelai != null) {
+             satelliteRelai.envoyerMessageVersCentrOp(msg);
+             satelliteRelai.messageCentreOp.ajouterElement(msg); // Add the message to the sent messages queue in SatelliteRelai
+         }
 
          receptionMessageDeSatellite(msg); // not sure that this is the right method to call
 

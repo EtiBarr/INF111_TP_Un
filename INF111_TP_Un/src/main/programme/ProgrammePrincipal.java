@@ -14,14 +14,16 @@ public class ProgrammePrincipal {
      */
 
 
-	public CentreControle centreControle;
-
-	public Rover rover;
-
 	public static void main(String[] args){
 
 
-		SatelliteRelai satellite = new SatelliteRelai();
+		SatelliteRelai satellite = new SatelliteRelai();	//instance of satelite
+		CentreControle centreControle = new CentreControle(satellite);	//instance of controle center
+		Rover rover = new Rover(satellite);	//instance of rover
+
+		satellite.lierCentreOp(centreControle); //linking
+		satellite.lierRover(rover); //linking
+
 		satellite.start();
 
 	}
