@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2f504d9-0829-45ad-8c79-1ba05e9d3027" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/INF111_TP_Un/src/testSuite/SatelliteRelaiTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/main/modele/communication/CompteurMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/main/modele/communication/CompteurMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/main/modele/communication/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/main/modele/communication/Message.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/main/modele/communication/TransporteurMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/main/modele/communication/TransporteurMessage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/main/modele/satelliteRelai/SatelliteRelai.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/main/modele/satelliteRelai/SatelliteRelai.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/main/programme/ProgrammePrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/main/programme/ProgrammePrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/INF111_TP_Un/src/main/utilitaires/FileChainee.java" beforeDir="false" afterPath="$PROJECT_DIR$/INF111_TP_Un/src/main/utilitaires/FileChainee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/INF111_TP_Un/main/modele/communication/Message.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/INF111_TP_Un/main/modele/communication/Message.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/INF111_TP_Un/main/modele/communication/TransporteurMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/INF111_TP_Un/main/modele/communication/TransporteurMessage.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/INF111_TP_Un/main/modele/satelliteRelai/SatelliteRelai.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/INF111_TP_Un/main/modele/satelliteRelai/SatelliteRelai.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/INF111_TP_Un/main/programme/ProgrammePrincipal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/INF111_TP_Un/main/programme/ProgrammePrincipal.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/INF111_TP_Un/main/utilitaires/FileChainee$Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/INF111_TP_Un/main/utilitaires/FileChainee$Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/INF111_TP_Un/main/utilitaires/FileChainee.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/INF111_TP_Un/main/utilitaires/FileChainee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/INF111_TP_Un/testSuite/FileChaineeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/INF111_TP_Un/testSuite/FileChaineeTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
