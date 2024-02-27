@@ -68,6 +68,7 @@ public abstract class TransporteurMessage extends Thread {
 	public void receptionMessageDeSatellite(Message msg) {
 		lock.lock();
 
+		//this part takes care of puting the sent messages from one to the received message to the other
 		try {
 
 			//i'm not sure if the way i am checking the position is the best ****************might have to change the way the position is allocated

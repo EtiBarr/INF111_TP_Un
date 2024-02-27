@@ -4,6 +4,8 @@ import main.modele.communication.Message;
 import main.modele.communication.TransporteurMessage;
 import main.modele.satelliteRelai.SatelliteRelai;
 
+//make sure that both this and rover has it's own list ***************************
+
 public  class CentreControle extends TransporteurMessage {
 
     private SatelliteRelai satelliteRelai;
