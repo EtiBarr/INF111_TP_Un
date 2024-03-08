@@ -13,20 +13,22 @@ public class Rover extends TransporteurMessage {
         super();
         this.satelliteRelai = satelliteRelai;
      }
-     protected void envoyerMessage(Message msg){
+     public void envoyerMessage(Message msg){
 
          if (satelliteRelai != null) {
              satelliteRelai.envoyerMessageVersCentrOp(msg);
-             satelliteRelai.messageCentreOp.ajouterElement(msg); // Add the message to the sent messages queue in SatelliteRelai
+             satelliteRelai.messageCentreOp.ajouterElement(msg); // Ajouter message a la liste des message envoyer
+         }else{
+             System.out.println("satelliteRelai is null (rover");
          }
 
-         receptionMessageDeSatellite(msg); // not sure that this is the right method to call
+         receptionMessageDeSatellite(msg);
 
      }
 
      protected void gestionnaireMessage(Message msg){
 
-         System.out.println("Nom de la classe" + msg.getClass() + "Le numero du message recu:" + msg.getCompte());
+         System.out.println("Le numero du message recu pour rover:" + msg.getCompte());
 
      }
 }

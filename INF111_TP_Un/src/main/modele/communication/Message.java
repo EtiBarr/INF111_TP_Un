@@ -32,15 +32,6 @@ public abstract class Message {
 	}
 
 
-	//******************** Not Asked, just for testing ************************
-	/*
-	public String toString(){
-		return "The compte is at: " + compte + " and the tempsEvoi is: " + tempsEnvoi;
-	}
-	*/
-
-	//*******************************************************************************************************************must delete
-
 	/**
 	 * Accesseur informateur, pour obtenir le temps de l'envoi
 	 * @return long, temps de l'envoi

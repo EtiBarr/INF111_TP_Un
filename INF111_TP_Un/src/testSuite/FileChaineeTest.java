@@ -50,17 +50,6 @@ class FileChaineeTest {
         assertFalse(file.estVide());
     }
 
-    @Test
-    void testToString() {
-        FileChainee file = new FileChainee();
-        Message msg1 = new MockMessage(1);
-        Message msg2 = new MockMessage(2);
-        file.ajouterElement(msg1);
-        file.ajouterElement(msg2);
-
-        String expected = "The object holds: [" + msg1 + ", " + msg2 + "]";
-        assertEquals(expected, file.toString());
-    }
 
     @Test
     void testAjouterEtEnleverElement() {
@@ -82,24 +71,6 @@ class FileChaineeTest {
     void testPopFromEmptyQueue() {
         FileChainee file = new FileChainee();
         assertNull(file.pop());
-    }
-
-    @Test
-    void testToStringEmptyQueue() {
-        FileChainee file = new FileChainee();
-        assertEquals("La file est vide", file.toString());
-    }
-
-    @Test
-    void testToStringNonEmptyQueue() {
-        FileChainee file = new FileChainee();
-        Message msg1 = new MockMessage(1);
-        Message msg2 = new MockMessage(2);
-        file.ajouterElement(msg1);
-        file.ajouterElement(msg2);
-
-        String expected = "The object holds: [" + msg1.toString() + ", " + msg2.toString() + "]";
-        assertEquals(expected, file.toString());
     }
 
 
@@ -130,17 +101,6 @@ class FileChaineeTest {
         assertTrue(file.estVide());
     }
 
-    @Test
-    void testToStringWithDifferentValues() {
-        FileChainee file = new FileChainee();
-        Message msg1 = new MockMessage(4);
-        Message msg2 = new MockMessage(9);
-        file.ajouterElement(msg1);
-        file.ajouterElement(msg2);
-
-        String expected = "The object holds: [" + msg1 + ", " + msg2 + "]";
-        assertEquals(expected, file.toString());
-    }
 
     @Test
     void testAjouterEtEnleverElementWithDifferentValues() {
@@ -158,17 +118,6 @@ class FileChaineeTest {
         assertTrue(file.estVide());
     }
 
-    @Test
-    void testToStringNonEmptyQueueWithDifferentValues() {
-        FileChainee file = new FileChainee();
-        Message msg1 = new MockMessage(8);
-        Message msg2 = new MockMessage(11);
-        file.ajouterElement(msg1);
-        file.ajouterElement(msg2);
-
-        String expected = "The object holds: [" + msg1.toString() + ", " + msg2.toString() + "]";
-        assertEquals(expected, file.toString());
-    }
 
 
 }

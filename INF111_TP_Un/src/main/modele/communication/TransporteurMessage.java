@@ -37,10 +37,6 @@ import java.util.concurrent.locks.ReentrantLock;
 import java.util.LinkedList;
 
 
-//questions to ask the prof
-//do we need to use out own linked queue or do we need to implement a ready made list (the guide says that we have to implement two)
-//where do we actually make the list of messages, sent and tosend
-//is it an issue if i name a little bit in english
 public abstract class TransporteurMessage extends Thread {
 
 	LinkedList<Message> listMessageRecu = new LinkedList<>();
@@ -67,14 +63,14 @@ public abstract class TransporteurMessage extends Thread {
 
 	public void receptionMessageDeSatellite(Message msg) {
 		lock.lock();
-
+		int nbNack = 0;
 		//this part takes care of puting the sent messages from one to the received message to the other
 		try {
 
 			//i'm not sure if the way i am checking the position is the best ****************might have to change the way the position is allocated
 			//maybe i am dropping the value one instance too far in the array
 
-			int nbNack = 0;
+
 				if(msg instanceof Nack){
 					//addFirst will add the message at the start of the list, ass desired
 					listMessageRecu.addFirst(msg);
@@ -98,20 +94,16 @@ public abstract class TransporteurMessage extends Thread {
 	 */
 
 	public void run() {
-
-		System.out.println("Transporteur works great");
+					//print count to verify that it works***************************************************
 
 		int compteCourant = 0;
 		
 		while(true) {
-			System.out.println("Transporteur works great");
+
 
 			lock.lock();
 			
 			try {
-
-				System.out.println("Transporteur works great");
-
 				boolean nackSent = false;
 
 				while(!listMessageRecu.isEmpty() && !nackSent){ //Tant qu’il y a des messages et qu’aucun Nack n’a été envoyé
@@ -126,7 +118,7 @@ public abstract class TransporteurMessage extends Thread {
 									&& listMessageEnvoyer.getFirst().getCompte() < nextMessageCompte //au compte inférieur au passage
 									|| listMessageEnvoyer.getFirst() instanceof Nack){ //ou estInstance de Nack.
 
-								listMessageEnvoyer.poll(); //not sure if i should use removeFirst instead *****
+								listMessageEnvoyer.poll(); //not sure if i should use removeFirst instead **********************
 							}
 
 							Message messageAEnvoyer = listMessageEnvoyer.peek(); //peek le message à envoyer (obtient sans enlever)

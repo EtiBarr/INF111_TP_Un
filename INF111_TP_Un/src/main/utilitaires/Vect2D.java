@@ -17,7 +17,7 @@ public class Vect2D {
      */
     public Vect2D(){
 
-        this.longueurX = 12; //valeur sans significance ************** will need to modify when the default value is known
+        this.longueurX = 12; //valeur sans significance
         this.longueurY = 25;
     }
 

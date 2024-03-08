@@ -8,7 +8,7 @@ import main.utilitaires.Vect2D;
 public class mainTest {
 
 
-    public static void testVect2d(){	//works like a charm
+    public static void testVect2d(){
 
         Vect2D vector = new Vect2D(8, 5);
 
@@ -38,7 +38,7 @@ public class mainTest {
         System.out.println(answer);
     }
 
-    public static void testFileChaine(){ //works like a charm
+    public static void testFileChaine(){
 
         FileChainee file = new FileChainee();
 
@@ -96,14 +96,7 @@ public class mainTest {
 
     }
 
-	/* Post part one notes
-	Currently, FileChinee has a lot of code that is just there for testing, so the results are different due to that,
-	especially with  the toString array
-	There are many different variations of FileChainee, i have to find out what the prof wants to know what the final
-	design of the linked queue will be
-	SatelliteRelai has extra print's to be able to see what is happening
-	Everything seems to be working fine atm
-	 */
+
 
     public static void main(String[] args) {
 

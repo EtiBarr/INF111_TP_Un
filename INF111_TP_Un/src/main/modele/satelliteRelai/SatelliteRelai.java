@@ -46,15 +46,15 @@ public class SatelliteRelai extends Thread{
 	public CentreControle centreControle;
 	public Rover rover;
 
-	public  void lierCentreOp(CentreControle centreControle){ //not sure if it should be the Message object or not
+	public  void lierCentreOp(CentreControle centreControle){
 
-		this.centreControle = centreControle; //link to centreControle
+		this.centreControle = centreControle; //lien au centreControle
 
 	}
 
 	public void lierRover(Rover rover){
 
-		this.rover = rover; //link to rover
+		this.rover = rover; //lien au rover
 
 	}
 
@@ -73,7 +73,6 @@ public class SatelliteRelai extends Thread{
 			if(rand.nextDouble() > PROBABILITE_PERTE_MESSAGE){
 
 				messageCentreOp.ajouterElement(msg);
-				System.out.println("Relai centreOp works great");
 
 			}
 			
@@ -94,10 +93,7 @@ public class SatelliteRelai extends Thread{
 		try {
 
 			if(rand.nextDouble() > PROBABILITE_PERTE_MESSAGE){
-
 				messageRover.ajouterElement(msg);
-				System.out.println("Relai rover works great");
-
 			}
 			
 		}finally {
@@ -108,9 +104,8 @@ public class SatelliteRelai extends Thread{
 	@Override
 	public void run() {
 
-		System.out.println("Relai works great");
-
 		while(true) {
+
 
 			while (!messageCentreOp.estVide()) {
 				if (centreControle != null) {
